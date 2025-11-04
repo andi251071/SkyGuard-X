@@ -1,3 +1,21 @@
-@echo off  
-cd /d C:\DroneDefense  
-python -c "import socket,webbrowser; s=socket.socket(); s.bind(('0.0.0.0',9090)); s.listen(5); print('Drone System Started'); webbrowser.open('http://localhost:9090'); exec('while True: c,a=s.accept(); c.send(b''HTTP/1.1 200 OK\\r\\n\\r\\n^<h1^>Drone System Running^</h1^>''); c.close()')" 
+@echo off
+================================================
+   SKYGUARD-X ENTERPRISE LAUNCHER
+================================================
+
+?? Starting SkyGuard-X Drone Defense System...
+?? Dashboard: http://localhost:8000
+?? GitHub: https://github.com/andi251071/SkyGuard-X
+
+?? System Status:
+Python 3.11.9
+
+?? Checking dependencies...
+Flask                        2.3.3
+flask-cors                   6.0.1
+Flask-SocketIO               5.5.1
+numpy                        1.23.5
+opencv-python                4.11.0.86
+
+?? Launching web server...
+
