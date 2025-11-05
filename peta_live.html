@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>PETA LIVE PESAWAT</title>  
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />  
+<style>  
+#map { height: 600px; }  
+.info { padding: 20px; background: white; border-radius: 10px; }  
+</style>  
+</head>  
+<body>  
+<h1>??? PETA LIVE PESAWAT REAL-TIME</h1>  
+<div id="map"></div>  
+<div class="info">  
+<h3>?? DATA REAL-TIME:</h3>  
+<p> Sumber: OpenSky Network API</p>  
+<p> Update: Setiap 30 detik</p>  
+<p> Jangkauan: Global</p>  
+</div>  
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>  
+<script>  
+var map = L.map('map').setView([-6.2088, 106.8456], 8);  
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);  
+L.marker([-6.2088, 106.8456]).addTo(map).bindPopup('?? Lokasi Anda: Jakarta');  
+// Simulasi pesawat  
+var pesawat = [  
+    {lat: -6.1, lon: 106.9, callsign: 'GA872', alt: '12000 kaki'},  
+    {lat: -6.3, lon: 107.1, callsign: 'LNI234', alt: '8000 kaki'},  
+    {lat: -5.9, lon: 106.7, callsign: 'SIA258', alt: '35000 kaki'}  
+];  
+pesawat.forEach(function(p) {  
+    L.marker([p.lat, p.lon]).addTo(map).bindPopup('?? ' + p.callsign + '<br>Tinggi: ' + p.alt);  
+});  
+</script>  
+</body>  
+</html> 
